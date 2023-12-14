@@ -1,7 +1,6 @@
 ---
-# Manifest file downloaded from fusion
-externalId: tr-asset-sample
-name: create_asset_sample
+externalId: tr-create_asset_hierarchy
+name: create_asset_hierarchy
 query:
     file: transformation.sql
 destination:
@@ -9,8 +8,10 @@ destination:
 ignoreNullFields: true
 shared: true
 action: upsert
-dataSetExternalId: src:all
-# Added authentication information
+schedule:
+    interval: 5,20,35,50 * * * *
+    isPaused: false
+dataSetExternalId: src:001:sap:ds
 authentication:
     clientId: ${COGNITE_CLIENT_ID}
     clientSecret: ${COGNITE_CLIENT_SECRET}
